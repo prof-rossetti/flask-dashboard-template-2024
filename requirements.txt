@@ -1,0 +1,13 @@
+
+# for reading environment variables from the ".env" file:
+python-dotenv
+
+# for fetching and processing CSV formatted data:
+pandas
+
+# for web application interface:
+Flask
+
+# for testing:
+pytest
+beautifulsoup4

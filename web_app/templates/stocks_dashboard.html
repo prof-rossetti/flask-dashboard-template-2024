@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>Stocks Dashboard</h2>
+
+    <div>
+        <p>Selected Stock: <span id="display-symbol">{{ symbol }}</span></p>
+        <p>Latest (Adjusted) Closing Price: <span id="display-latest-closing-price">__________</span></p>
+    </div>
+
+    <div id="dataviz-container"></div>
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+
+        // processing the symbol variable returned by the router:
+        var symbol = '{{symbol}}'
+        console.log(symbol)
+
+        // processing the specific JSON response data returned by the router:
+        var responseData = JSON.parse('{{data | tojson}}')
+        console.log(responseData)
+
+        var dates = [] //> an array of date keys, for the chart ["2020-01-27", "2020-01-24", "2020-01-23", etc.]
+        var closingPrices = [] //> an array of price objects
+
+        responseData.forEach(row => {
+            dates.push(row["timestamp"])
+            closingPrices.push(row["adjusted_close"])
+        });
+
+        var latestDate = dates[0]
+        var earliestDate = dates[dates.length - 1]
+        console.log("DATE RANGE:", earliestDate, "-", latestDate)
+
+        var latestClose = closingPrices[0]
+        var latestCloseUSD = "$" + latestClose.toFixed(2) // formatting the number with dollar sign and rounding to two decimal places
+        console.log("LATEST CLOSE:", latestCloseUSD)
+
+        // updating the contents of the page:
+        var displayLatestClose = document.getElementById("display-latest-closing-price")
+        displayLatestClose.innerText = latestCloseUSD
+
+        // charting the data (see https://plotly.com/javascript/line-charts/):
+        var title = "Daily Closing Prices for Stock: " + symbol
+        var layout = {title: title, height: 500}
+        var chartData = [
+            {x: dates, y: closingPrices, mode: "lines+markers"}
+        ]
+        Plotly.newPlot("dataviz-container", chartData, layout, {responsive: true})
+
+    </script>
+
+{% endblock %}
