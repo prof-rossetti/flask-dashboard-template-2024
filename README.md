@@ -15,7 +15,7 @@ Make a copy of the template repository from GitHub. Clone your copy of the repo 
 Navigate to the local repository from the command line, for example:
 
 ```sh
-cd ~/Desktop/flask-dashboard-template-2023
+cd ~/Desktop/flask-dashboard-template-2024
 ```
 
 > NOTE: it is important to navigate to the root directory before running any of the commands below.
@@ -101,3 +101,9 @@ Running tests, as configured by the "conftest.py" file and defined in the "test"
 ```sh
 pytest
 ```
+
+## Continuous Integration (CI)
+
+This repository uses GitHub Actions to run tests automatically when new code is pushed up to GitHub. The configuration file for this CI build is found at ".github/workflows/python-app.yml". To make the build pass, you'll need to first set a repository secret called `ALPHAVANTAGE_API_KEY` (via the "Secrets and variables" > "Actions" menu in the GitHub repo settings). Use the same value as in your local ".env" file (except omit the quotes).
+
+## [License](/LICENSE)
