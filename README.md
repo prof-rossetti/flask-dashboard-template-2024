@@ -68,13 +68,17 @@ ALPHAVANTAGE_API_KEY="________"
 
 ## Usage
 
-Test the data fetching process:
+### AlphaVantage Data Service
+
+After you have configured environment variables, you should be able to run the following file to verify the app's ability to fetch stock data:
 
 ```sh
 python -m app.alpha
 ```
 
-Run the web application (then view in the browser at localhost:5000):
+### Web Application
+
+Assuming the data fetching functionality is working, you should be able to run the web application (then view in the browser at localhost:5000):
 
 ```sh
 flask run
