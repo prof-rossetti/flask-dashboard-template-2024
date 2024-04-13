@@ -1,3 +1,4 @@
+
 from conftest import parse_page
 
 #
@@ -38,6 +39,8 @@ def test_stocks_form(test_client):
     assert response.status_code == 200
     page = parse_page(response.data)
     assert page.find("h2").text == "Stocks Form"
+
+    #breakpoint()
 
 
 def test_stocks_dashboard(test_client):

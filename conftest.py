@@ -17,6 +17,10 @@ def test_client():
     app.config.update({"TESTING": True})
     return app.test_client()
 
+#
+# HELPER FUNCTION FOR PARSING HTML CONTENTS OF A PAGE
+#
+
 def parse_page(html):
     """Params
         html : some HTML text, like the response.data returned by web_client.get()

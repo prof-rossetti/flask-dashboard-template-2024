@@ -1,4 +1,4 @@
-# flask-dashboard-template-2023
+# flask-dashboard-template-2024
 
 This is an example full stack web application built in Python with the [Flask](https://github.com/prof-rossetti/intro-to-python/blob/main/notes/python/packages/flask.md) framework. This application displays an interactive data dashboard of stock prices over time.
 
@@ -71,7 +71,7 @@ ALPHAVANTAGE_API_KEY="________"
 Test the data fetching process:
 
 ```sh
-python -m web_app.services.alpha
+python -m app.alpha
 ```
 
 Run the web application (then view in the browser at localhost:5000):

@@ -2,7 +2,7 @@
 
 from flask import Blueprint, request, render_template, redirect
 
-from web_app.services.alpha import AlphavantageService
+from app.alpha import AlphavantageService
 
 
 dashboard_routes = Blueprint("dashboard_routes", __name__)

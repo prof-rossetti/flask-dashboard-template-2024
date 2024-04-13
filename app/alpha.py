@@ -65,3 +65,9 @@ if __name__ == "__main__":
         latest = stocks_df.iloc[0] # get the first row in the dataset
         print(latest["timestamp"])
         print(to_usd(latest["close"]))
+
+
+        print("SAVING TO CSV...")
+        filename = f"{symbol.lower()}_prices.csv"
+        csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", filename)
+        stocks_df.to_csv(csv_filepath, index=False)
