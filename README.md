@@ -80,6 +80,20 @@ Run the web application (then view in the browser at localhost:5000):
 flask run
 ```
 
+By default, you should be able to view the following routes:
+
+  + http://localhost:5000/
+  + http://localhost:5000/about
+  + http://localhost:5000/hello
+  + http://localhost:5000/hello?name=MJ
+  + http://localhost:5000/stocks/form
+  + http://localhost:5000/stocks/dashboard
+  + http://localhost:5000/stocks/dashboard?symbol=NVDA
+
+> NOTE: if you run into issues seeting the site at the localhost:5000 address, try 127.0.0.1:5000 instead!
+
+> NOTE: by default the home routes display some text, but you can update the "web_app/routes/home_routes.py" file to have them render HTML pages instead!
+
 ## Testing
 
 Running tests, as configured by the "conftest.py" file and defined in the "test" directory:
