@@ -6,8 +6,8 @@ python-dotenv
 pandas
 
 # for web application interface:
-Flask
+Flask==3.0.3
 
 # for testing:
 pytest
-beautifulsoup4
+beautifulsoup4 # version 4.12.3
